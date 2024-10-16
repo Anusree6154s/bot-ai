@@ -8,7 +8,12 @@ const ChatSidebar = ({ isMobile, isDrawerOpen, toggleDrawer, startNewChat, handl
   return (
     <>
       {isMobile ? (
-        <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} className='drawer'>
+        <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} className='drawer' PaperProps={{
+          style: {
+            backgroundColor: 'black',
+            color: 'white',
+          },
+        }}>
           <SidebarContent startNewChat={startNewChat} handlePastConvo={handlePastConvo} />
         </Drawer>
       ) : (
