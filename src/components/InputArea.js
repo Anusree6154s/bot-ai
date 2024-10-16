@@ -1,5 +1,6 @@
-import React from 'react';
-import FeedbackForm from '../FeedbackForm';
+import React, { useContext } from 'react';
+import FeedbackForm from './FeedbackForm'
+import { LightThemeContext } from '../contexts/ThemeContext';
 
 function InputArea({
     input,
@@ -14,6 +15,7 @@ function InputArea({
     setComment,
     saveFeedback,
 }) {
+    const { lightTheme } = useContext(LightThemeContext)
 
     return (
         <div className="input-area">
@@ -21,11 +23,12 @@ function InputArea({
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
+                style={{ background: !lightTheme && '#240b4a', border: !lightTheme && '2px solid magenta' }}
             />
-            <button onClick={handleSendMessage}>
+            <button onClick={handleSendMessage} style={{ background: !lightTheme && 'magenta', color: !lightTheme && 'white' }}>
                 Ask
             </button>
-            <button onClick={handleFeedbackModal}>
+            <button onClick={handleFeedbackModal} style={{ background: !lightTheme && 'magenta', color: !lightTheme && 'white' }}>
                 Save
             </button>
 

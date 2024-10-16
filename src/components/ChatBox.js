@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import Message from './Message';
 import { getAIResponse } from '../services/aiService';
 import PastConversations from './PastConversations';
@@ -10,6 +10,9 @@ import InputArea from './InputArea';
 import ChatSidebar from './ChatSidebar';
 import InitialQuestions from './InitialQuestions';
 import MessageList from './MessageList';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import { LightThemeContext } from '../contexts/ThemeContext';
 
 const ChatBox = () => {
     const [messages, setMessages] = useState([]);
@@ -23,6 +26,8 @@ const ChatBox = () => {
     const [showFeedbackModal, setShowFeedbackModal] = useState(false)
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const isMobile = useMediaQuery('(max-width:590px)');
+
+    const { lightTheme, toggleTheme } = useContext(LightThemeContext)
 
     const initialQuestions = [
         "What is the virtual DOM?",
@@ -121,7 +126,7 @@ const ChatBox = () => {
 
 
     return (
-        <div className="chat-box">
+        <div className="chat-box" style={{ color: !lightTheme && 'white' }}>
             <ChatSidebar
                 isMobile={isMobile}
                 isDrawerOpen={isDrawerOpen}
@@ -129,19 +134,27 @@ const ChatBox = () => {
                 startNewChat={startNewChat}
                 handlePastConvo={handlePastConvo}
             />
-            <div className='content'>
+            <div className='content'style={{ background: !lightTheme && 'linear-gradient( #310E68 0%, #0C0C0C 100%)' }}>
                 <p className='bot-ai'>
-                    {isMobile && (
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            onClick={toggleDrawer(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                    )}
-                    <span>Bot AI</span>
+                    <div>
+                        {isMobile && (
+                            <IconButton
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                onClick={toggleDrawer(true)}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                        )}
+                        <span>Bot AI</span>
+                    </div>
+                    <div onClick={toggleTheme} >
+                        {lightTheme
+                            ? <DarkModeIcon />
+                            : <LightModeIcon />}
+                    </div>
+
                 </p>
 
                 <div className='message-area'>

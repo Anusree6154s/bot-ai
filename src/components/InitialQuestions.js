@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { LightThemeContext } from '../contexts/ThemeContext'
 
 export default function InitialQuestions({
   isMobile,
   initialQuestions,
   handleQuestionClick }) {
+
+  const { lightTheme } = useContext(LightThemeContext)
   return (
     <div className="initial-questions">
       <div className='welcome-section'>
@@ -20,10 +23,10 @@ export default function InitialQuestions({
             key={index}
             onClick={() => handleQuestionClick(question)}
             className="question-button"
-            style={{ fontSize: isMobile ? '10px' : '16px' }}
+            style={{ fontSize: isMobile ? '10px' : '16px', background: !lightTheme && '#3a2261', color: !lightTheme && 'white' }}
           >
             <p > {question}</p>
-            <p>Get immediate AI generated response</p>
+            <p style={{ color: !lightTheme && '#8e78b0'}}>Get immediate AI generated response</p>
 
           </button>
         ))}

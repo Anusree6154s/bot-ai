@@ -1,7 +1,8 @@
 
 import { useMediaQuery } from '@mui/system';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ThumbsRating from './ThumbsRating';
+import { LightThemeContext } from '../contexts/ThemeContext';
 
 const Message = ({ sender, text, time, pastConvo }) => {
 
@@ -14,7 +15,7 @@ const Message = ({ sender, text, time, pastConvo }) => {
         setHovered(false);
     };
 
-
+    const { lightTheme } = useContext(LightThemeContext)
     return (
         <div
             onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
@@ -27,10 +28,10 @@ const Message = ({ sender, text, time, pastConvo }) => {
             <div className='message-bubble-text' style={{ flex: 1 }}>
                 <div >
                     <p className='name'>{sender === 'user' ? 'You' : 'Bot AI'}</p>
-                    <p className='info'>{text}</p>
+                    <p className='info' style={{ color: !lightTheme && '#a79fb3' }}>{text}</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <p className='time'>{time}</p>
+                    <p className='time' style={{ color: !lightTheme && '#9586ad' }}>{time}</p>
                     {!pastConvo && <ThumbsRating hovered={hovered} />}
                 </div>
 

@@ -1,70 +1,67 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AI Chat with Feedback System
 
-## Available Scripts
+This is a ReactJS web application where users can chat with an AI model and provide feedback for each response. Users can also review past conversations and see all the feedback they've given across different sessions. The application also supports toggling between light and dark mode for improved accessibility.
 
-In the project directory, you can run:
+## Getting Started
+1. To access website hosted on internet, visit 
+2. Follow the steps below to run the project on your local machine.
 
-### `npm start`
+### Prerequisites
+- Node.js and npm installed on your machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/ai-chat-feedback.git
+   cd ai-chat-feedback
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-### `npm test`
+3. Run the application locally:
+   ```bash
+   npm start
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Open your browser and go to:
+   ```
+   http://localhost:3000
+   ```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technical Choices
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Libraries Used
+- **ReactJS**: The primary framework for building the UI of the web application.
+- **Material-UI (MUI)**: Chosen for its ready-to-use, consistent, and customizable UI components that help maintain a clean design.
+- **React Context API**: Used for managing the global state of the application, particularly for theme switching and handling conversation history.
+- **Vercel**: Deployed on Vercel for its seamless integration with React projects, fast performance, and easy setup.
 
-### `npm run eject`
+## Design Choices
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### User Interface & Experience
+- **Chat UI**: The chat interface is designed to be clean and intuitive. Each AI response has a floating thumbs-up/down button that appears on hover to minimize clutter.
+- **Feedback Collection**: Feedback is collected using a rating system for quantitative feedback and a text area for qualitative feedback.
+- **Sidebar for Past Conversations**: The past conversations are listed in a collapsible sidebar for easy navigation and quick access, providing a more organized way to manage multiple conversations.
+- **Light and Dark Mode**: Added to enhance user experience by allowing them to toggle between light and dark themes based on their preference.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Visual Consistency
+- Material-UI components ensure that the UI remains visually consistent and responsive across different devices.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Trade-offs
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Limitations
+- **Time Constraints**: Due to limited development time, some advanced features like saving data to a backend database were not implemented.
+- **Minimal Animations**: Although basic transitions were added, more sophisticated animations could be included with additional time.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future Enhancements
+- **Backend Integration**: Add API calls to store and fetch conversation history from a backend database.
+- **Real-time AI Interaction**: Use an API service like OpenAI to handle real-time AI interactions instead of mock responses.
+- **Authentication**: Implement user authentication for a more personalized experience.
+- **Enhanced Animations**: Add more fluid animations to improve the user experience during interactions.
+ - **Jest Testing** :Implement Jest testing to ensure robust functionality and error-free code.
