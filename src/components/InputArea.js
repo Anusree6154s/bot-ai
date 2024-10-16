@@ -23,7 +23,7 @@ function InputArea({
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                style={{ background: !lightTheme && '#240b4a', border: !lightTheme && '2px solid magenta' }}
+                style={{ background: !lightTheme && '#240b4a', border: !lightTheme && '2px solid magenta', color: !lightTheme && 'white' }}
             />
             <button onClick={handleSendMessage} style={{ background: !lightTheme && 'magenta', color: !lightTheme && 'white' }}>
                 Ask
