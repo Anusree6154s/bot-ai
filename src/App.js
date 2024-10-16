@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { LightThemeContext } from './contexts/ThemeContext';
 
 function App() {
-  const [lightTheme, setLightTheme] = useState(false)
+  const [lightTheme, setLightTheme] = useState(true)
 
   const toggleTheme = () => {
     setLightTheme(!lightTheme);
