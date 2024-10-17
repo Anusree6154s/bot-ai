@@ -1,10 +1,10 @@
 
-# AI Chat with Feedback System
+# Bot AI
 
 This is a ReactJS web application where users can chat with an AI model and provide feedback for each response. Users can also review past conversations and see all the feedback they've given across different sessions. The application also supports toggling between light and dark mode for improved accessibility.
 
 ## Getting Started
-1. To access website hosted on internet, visit 
+1. To access website hosted on internet, visit https://bot-ai-flame.vercel.app/
 2. Follow the steps below to run the project on your local machine.
 
 ### Prerequisites
